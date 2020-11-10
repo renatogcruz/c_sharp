@@ -15,7 +15,7 @@ namespace s3_13
             int min = int.MinValue; //declara o menor valor da classe int
             long n3 = 215415254L;
             string obj1 = "Renato";
-            object obj2 = 4.5f; // object aceita tudo (genericos)
+            object obj2 = 4.5f; // object aceita tudo (genéricos)
 
             Console.WriteLine(completo);
             Console.WriteLine(genero);
