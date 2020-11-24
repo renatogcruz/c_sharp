@@ -15,6 +15,16 @@ namespace s40_produto
             return Preco * Quantidade;
         }
 
+        public void AdicionarProdutos(int quantidade)
+        {
+            Quantidade = Quantidade + quantidade;
+        }
+
+        public void RemoverProdutos(int quantidade)
+        {
+            Quantidade = Quantidade - quantidade;
+        }
+
         public override string ToString()
         {
             return Nome 
