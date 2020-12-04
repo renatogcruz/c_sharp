@@ -16,3 +16,7 @@ Estudando c#
 
 ## Support
 [RhinoCommon API](https://developer.rhino3d.com/api/RhinoCommon/html/R_Project_RhinoCommon.htm)
+
+## Algoritmos
+
+[Algoritmos e estruturas de dados implementados em C #](https://github.com/TheAlgorithms/C-Sharp)
