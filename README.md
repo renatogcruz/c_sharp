@@ -20,3 +20,7 @@ Estudando c#
 ## Algoritmos
 
 [Algoritmos e estruturas de dados implementados em C #](https://github.com/TheAlgorithms/C-Sharp)
+
+## Livro de notas C# para profissionais
+
+[C# Notes for Professionals book](https://books.goalkicker.com/CSharpBook/#.X82HgNn3M5E.linkedin)
