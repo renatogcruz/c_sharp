@@ -38,7 +38,14 @@ namespace lacos
                 j = j * 1.5;
             } while (j < 100);
 
-            // 
+            // Foreach
+            // Percorre todos os elementos de um conjunto
+
+            int[] conjunto = { 1, 2, 3, 4 }; // um vetor unidimensional;
+            foreach(int numero in conjunto) // para cada numero no conjunto..
+            {
+                Console.WriteLine("Esse elemento do conjunto tem valor " + numero);
+            }
         }
     }
 }
