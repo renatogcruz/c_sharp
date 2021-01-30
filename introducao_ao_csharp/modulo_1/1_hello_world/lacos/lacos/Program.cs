@@ -27,7 +27,18 @@ namespace lacos
                 Console.WriteLine(contador);
                 contador++;
             }
-            
+
+            // Do .. while
+            // execução garantida pelo menos uma vez! (executa primeiro e depois testa)
+
+            double j = 10;
+            do
+            {
+                Console.WriteLine("Valor de j é " + j);
+                j = j * 1.5;
+            } while (j < 100);
+
+            // 
         }
     }
 }
