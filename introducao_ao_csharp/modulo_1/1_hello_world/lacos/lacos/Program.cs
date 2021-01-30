@@ -18,6 +18,16 @@ namespace lacos
             {
                 Console.WriteLine("Valor de i é " + i);
             }
+
+            // laço while
+
+            int contador = 3;
+            while (contador < 10)
+            {
+                Console.WriteLine(contador);
+                contador++;
+            }
+            
         }
     }
 }
