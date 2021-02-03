@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace PetShop
 {
-    public class Animal
+    public abstract class Animal // Uma classe abstrada não pode ser instanciada (Animal a = new Animal())
     {
-        public string Nome { get; set; }
-        public int Idade { get; set; }
+        public string Nome { get; }
+        public int Idade { get; }
+        public string SomEmitido { get;  }
 
         public Animal(string nome, int idade)
         {
