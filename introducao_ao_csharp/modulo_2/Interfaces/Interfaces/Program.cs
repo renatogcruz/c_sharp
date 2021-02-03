@@ -10,6 +10,19 @@ namespace Interfaces
     {
         static void Main(string[] args)
         {
+            var i = new ImpressoraComum();
+            var i2 = new ImpressoraCopiadora();
+            var c = new ImpressoraCopiadora();
+
+            Console.WriteLine(i.Imprimir("Estou estudando c#"));
+            Console.WriteLine(i2.Copiar("Estou estudando C# e gostando"));
+
+            CopiarDocumento(new Xerox(), "Hello, world");
+        }
+
+        public static void CopiarDocumento(ICopiar c, string texto)
+        {
+            Console.WriteLine("Estou copiando o texto: " + c.Copiar(texto));
         }
     }
 }
