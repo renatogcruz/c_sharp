@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,9 @@ namespace SimplePaint
         private float espessuraCaneta;
         private Color corBorracha;
         private bool flagApagar = false; // Para controlar quando se deve apagar com a borracha
+        private Image imagemASalvar;
+        private Graphics graphicsImagemASalvar;
+        private ImageFormat ImageFormat;
 
         public FormPrincipal()
         {
@@ -42,6 +46,10 @@ namespace SimplePaint
             graphicsPainelPintura = panelPintura.CreateGraphics(); // O graphics permite o desenho sobre o controle
             espessuraCaneta = float.Parse(comboBoxEspessuraDaCaneta.Text); // Converte o texto da comboBox para um float
             corBorracha = panelPintura.BackColor; // Especifica a cor padrão da borracha como a cor de fundo do papel
+
+            imagemASalvar = new Bitmap(panelPintura.Width, panelPintura.Height); // Imagem para salvar
+            graphicsImagemASalvar = Graphics.FromImage(imagemASalvar); // extraindo graphics da imagem para salvar de forma a poder desenhar nela
+            graphicsImagemASalvar.Clear(panelPintura.BackColor); // Preenchemos a imagem com a cor do fundo do painel
         }
 
         private void buttonBorracha_Click(object sender, EventArgs e)
@@ -54,6 +62,8 @@ namespace SimplePaint
             if (MessageBox.Show("Tem certeza disso?", "Apagar desenho", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 graphicsPainelPintura.Clear(Color.White); // Limpa o papel e preenche novamente o fundo de branco
+                imagemASalvar = new Bitmap(panelPintura.Width, panelPintura.Height); // Imagem para salvar
+                graphicsImagemASalvar = Graphics.FromImage(imagemASalvar); // extraindo graphics da imagem para salvar de forma a poder desenhar nela
             }
         }
 
@@ -91,11 +101,16 @@ namespace SimplePaint
             {
                 if (!flagApagar)
                 {
+                    // Desenhando uma elipse de cor e espessura definida pelo usuário
                     graphicsPainelPintura.DrawEllipse(new Pen(buttonCorDaCaneta.BackColor, espessuraCaneta), new RectangleF(e.X, e.Y, espessuraCaneta, espessuraCaneta));
+                    // Desenhando na imagem para salvar
+                    graphicsImagemASalvar.DrawEllipse(new Pen(buttonCorDaCaneta.BackColor, espessuraCaneta), new RectangleF(e.X, e.Y, espessuraCaneta, espessuraCaneta));
                 }
                 else
                 {
                     graphicsPainelPintura.DrawRectangle(new Pen(corBorracha, espessuraCaneta), new Rectangle(e.X, e.Y, (int)espessuraCaneta, (int)espessuraCaneta)); // transformamos uma variável tipo float para inteiro
+                    // 
+                    graphicsImagemASalvar.DrawRectangle(new Pen(corBorracha, espessuraCaneta), new Rectangle(e.X, e.Y, (int)espessuraCaneta, (int)espessuraCaneta));
                 }
 
                 
@@ -134,6 +149,36 @@ namespace SimplePaint
                     
                 }
             }
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Portable Networl Graphics | .png|Arquivo JPEG| .jpeg";
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Definindo a extensão da imagem que queremos salvar
+                switch (saveFileDialog.FilterIndex)
+                {
+                    case 1:
+                        imagemASalvar.Save(saveFileDialog.FileName, ImageFormat.Png);
+                        break;
+                    case 2:
+                        imagemASalvar.Save(saveFileDialog.FileName, ImageFormat.Jpeg);
+                        break;
+                }
+            }
+        }
+        // Evento disparado sempre que o painel é redimensionado
+        private void panelPintura_Resize(object sender, EventArgs e) 
+        {
+            graphicsPainelPintura = panelPintura.CreateGraphics(); // Atualiza a refer~enia do objeto graphics do painel
+            var imagTemp = new Bitmap(panelPintura.Width, panelPintura.Height); // Criamos uma imagem temporária
+            var graphicsImagTemp = Graphics.FromImage(imagTemp);
+            graphicsImagTemp.DrawImage(imagemASalvar, 0, 0);
+            imagemASalvar = imagTemp;
+            graphicsImagemASalvar = graphicsImagTemp;
+
         }
     }
 }

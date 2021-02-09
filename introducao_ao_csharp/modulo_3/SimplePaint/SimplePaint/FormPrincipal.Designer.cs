@@ -133,6 +133,7 @@
             this.buttonSalvar.TabIndex = 6;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // panelPintura
             // 
@@ -147,6 +148,7 @@
             this.panelPintura.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelPintura_MouseDown);
             this.panelPintura.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelPintura_MouseMove);
             this.panelPintura.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelPintura_MouseUp);
+            this.panelPintura.Resize += new System.EventHandler(this.panelPintura_Resize);
             // 
             // FormPrincipal
             // 
