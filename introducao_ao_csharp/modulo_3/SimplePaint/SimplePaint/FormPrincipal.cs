@@ -15,6 +15,17 @@ namespace SimplePaint
         public FormPrincipal()
         {
             InitializeComponent();
+
+            for (int i=2; i <= 100; i += 2) // Irá preencher a comboBox de 2 até 100 contando de 2 em 2
+            {
+                comboBoxEspessuraDaCaneta.Items.Add(i); // Adiciona o valor da espessura
+            }
+
+            comboBoxEspessuraDaCaneta.Text = "10"; // Texto irá aparecer inicialmente na comboBox
+            comboBoxEspessuraDaCaneta.MaxDropDownItems = 5; // Necessários para que seja definido a quatiadde de itens a ser mostrado na comboBox
+            comboBoxEspessuraDaCaneta.IntegralHeight = false; // Define o núm. de itens a ser exibido na comboBox
+
+
         }
 
         private void buttonBorracha_Click(object sender, EventArgs e)

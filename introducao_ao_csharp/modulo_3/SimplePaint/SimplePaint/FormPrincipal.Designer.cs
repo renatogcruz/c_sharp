@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonCorDaCaneta = new System.Windows.Forms.Button();
             this.CorDaCaneta = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEspessuraDaCaneta = new System.Windows.Forms.ComboBox();
             this.EspessuraDaCaneta = new System.Windows.Forms.Label();
             this.buttonBorracha = new System.Windows.Forms.Button();
             this.buttonLimpar = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.groupBox1.Controls.Add(this.buttonLimpar);
             this.groupBox1.Controls.Add(this.buttonBorracha);
             this.groupBox1.Controls.Add(this.EspessuraDaCaneta);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxEspessuraDaCaneta);
             this.groupBox1.Controls.Add(this.CorDaCaneta);
             this.groupBox1.Controls.Add(this.buttonCorDaCaneta);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,13 +80,13 @@
             this.CorDaCaneta.TabIndex = 1;
             this.CorDaCaneta.Text = "Cor da caneta";
             // 
-            // comboBox1
+            // comboBoxEspessuraDaCaneta
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(343, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxEspessuraDaCaneta.FormattingEnabled = true;
+            this.comboBoxEspessuraDaCaneta.Location = new System.Drawing.Point(343, 52);
+            this.comboBoxEspessuraDaCaneta.Name = "comboBoxEspessuraDaCaneta";
+            this.comboBoxEspessuraDaCaneta.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxEspessuraDaCaneta.TabIndex = 2;
             // 
             // EspessuraDaCaneta
             // 
@@ -164,7 +164,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label CorDaCaneta;
         private System.Windows.Forms.Button buttonCorDaCaneta;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxEspessuraDaCaneta;
         private System.Windows.Forms.Label EspessuraDaCaneta;
         private System.Windows.Forms.Button buttonBorracha;
         private System.Windows.Forms.Button buttonLimpar;
