@@ -12,6 +12,11 @@ namespace SimplePaint
 {
     public partial class FormPrincipal : Form // parcial pq parte dela está definida em outro local
     {
+
+        private bool flagPintar = false; // Variável define quando se deve desenhar
+        private Graphics graphicsPainelPintura;
+        private float espessuraCaneta;
+
         public FormPrincipal()
         {
             InitializeComponent();
@@ -25,7 +30,8 @@ namespace SimplePaint
             comboBoxEspessuraDaCaneta.MaxDropDownItems = 5; // Necessários para que seja definido a quatiadde de itens a ser mostrado na comboBox
             comboBoxEspessuraDaCaneta.IntegralHeight = false; // Define o núm. de itens a ser exibido na comboBox
 
-
+            graphicsPainelPintura = panelPintura.CreateGraphics(); // O graphics permite o desenho sobre o controle
+            espessuraCaneta = float.Parse(comboBoxEspessuraDaCaneta.Text); // Converte o texto da comboBox para um float
         }
 
         private void buttonBorracha_Click(object sender, EventArgs e)
@@ -53,6 +59,24 @@ namespace SimplePaint
             if (corEscolhida == DialogResult.OK) // Verifica se usuário clicou mesmo em ok 
             {
                 buttonCorDaCaneta.BackColor = colorDialog.Color; // Alteramos a cor do botão para a cor escolhida
+            }
+        }
+
+        private void panelPintura_MouseDown(object sender, MouseEventArgs e)
+        {
+            flagPintar = true;
+        }
+
+        private void panelPintura_MouseUp(object sender, MouseEventArgs e)
+        {
+            flagPintar = false;
+        }
+
+        private void panelPintura_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flagPintar)
+            {
+                graphicsPainelPintura.DrawEllipse(new Pen(buttonCorDaCaneta.BackColor, espessuraCaneta), new RectangleF(e.X, e.Y, espessuraCaneta, espessuraCaneta));
             }
         }
     }

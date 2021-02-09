@@ -141,6 +141,9 @@
             this.panelPintura.Name = "panelPintura";
             this.panelPintura.Size = new System.Drawing.Size(776, 340);
             this.panelPintura.TabIndex = 1;
+            this.panelPintura.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelPintura_MouseDown);
+            this.panelPintura.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelPintura_MouseMove);
+            this.panelPintura.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelPintura_MouseUp);
             // 
             // FormPrincipal
             // 
