@@ -16,10 +16,19 @@ namespace SimplePaint
         private bool flagPintar = false; // Variável define quando se deve desenhar
         private Graphics graphicsPainelPintura;
         private float espessuraCaneta;
+        private Color corBorracha;
+        private bool flagApagar = false; // Para controlar quando se deve apagar com a borracha
 
         public FormPrincipal()
         {
             InitializeComponent();
+
+            // As propriedades abaixo só fazem efeito quando o botão está com a propriedade FlatStyle
+            // setada em Flat
+            // Autera a cor do botão quando o mouse está seobre ele
+            buttonBorracha.FlatAppearance.MouseOverBackColor = Color.DarkSlateGray;
+            buttonLimpar.FlatAppearance.MouseOverBackColor = Color.DarkSlateGray;
+            buttonSalvar.FlatAppearance.MouseOverBackColor = Color.DarkSlateGray;
 
             for (int i=2; i <= 100; i += 2) // Irá preencher a comboBox de 2 até 100 contando de 2 em 2
             {
@@ -32,6 +41,7 @@ namespace SimplePaint
 
             graphicsPainelPintura = panelPintura.CreateGraphics(); // O graphics permite o desenho sobre o controle
             espessuraCaneta = float.Parse(comboBoxEspessuraDaCaneta.Text); // Converte o texto da comboBox para um float
+            corBorracha = panelPintura.BackColor; // Especifica a cor padrão da borracha como a cor de fundo do papel
         }
 
         private void buttonBorracha_Click(object sender, EventArgs e)
@@ -41,7 +51,10 @@ namespace SimplePaint
 
         private void buttonLimpar_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Tem certeza disso?", "Apagar desenho", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                graphicsPainelPintura.Clear(Color.White); // Limpa o papel e preenche novamente o fundo de branco
+            }
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -74,9 +87,52 @@ namespace SimplePaint
 
         private void panelPintura_MouseMove(object sender, MouseEventArgs e)
         {
-            if (flagPintar)
+            if (flagPintar) 
             {
-                graphicsPainelPintura.DrawEllipse(new Pen(buttonCorDaCaneta.BackColor, espessuraCaneta), new RectangleF(e.X, e.Y, espessuraCaneta, espessuraCaneta));
+                if (!flagApagar)
+                {
+                    graphicsPainelPintura.DrawEllipse(new Pen(buttonCorDaCaneta.BackColor, espessuraCaneta), new RectangleF(e.X, e.Y, espessuraCaneta, espessuraCaneta));
+                }
+                else
+                {
+                    graphicsPainelPintura.DrawRectangle(new Pen(corBorracha, espessuraCaneta), new Rectangle(e.X, e.Y, (int)espessuraCaneta, (int)espessuraCaneta)); // transformamos uma variável tipo float para inteiro
+                }
+
+                
+            }
+        }
+        
+        // SelectedIndexChanged ocorro quando é feita uma escolha de item pelo usuário na comboBox
+        // 
+        private void comboBoxEspessuraDaCaneta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            espessuraCaneta = float.Parse(comboBoxEspessuraDaCaneta.SelectedItem.ToString());
+        }
+
+
+        private void buttonBorracha_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right) // Se usuário clicar com o botão direito do mouse
+            {
+                var colorDialog = new ColorDialog();
+                if (colorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    corBorracha = colorDialog.Color; // Seleciona a cor da borracha de acordo com a escolha do usuário
+                }
+                else
+                {
+                    if (!flagApagar) // O operador ! antes irá virar o valor da flagApagar ao contrário, ou seja, se é true ficará false
+                    {
+                        flagApagar = true;
+                        buttonBorracha.BackColor = corBorracha; // Cor do botão será a mesma da borracha
+                    }
+                    else
+                    {
+                        flagApagar = false;
+                        buttonBorracha.BackColor = Color.Gray; // cor do botão voltará ao padrão (possível erro - aparencia está setado como button.Shad..)
+                    }
+                    
+                }
             }
         }
     }

@@ -87,6 +87,7 @@
             this.comboBoxEspessuraDaCaneta.Name = "comboBoxEspessuraDaCaneta";
             this.comboBoxEspessuraDaCaneta.Size = new System.Drawing.Size(121, 24);
             this.comboBoxEspessuraDaCaneta.TabIndex = 2;
+            this.comboBoxEspessuraDaCaneta.SelectedIndexChanged += new System.EventHandler(this.comboBoxEspessuraDaCaneta_SelectedIndexChanged);
             // 
             // EspessuraDaCaneta
             // 
@@ -99,14 +100,16 @@
             // 
             // buttonBorracha
             // 
+            this.buttonBorracha.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.buttonBorracha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBorracha.Location = new System.Drawing.Point(481, 53);
             this.buttonBorracha.Name = "buttonBorracha";
             this.buttonBorracha.Size = new System.Drawing.Size(75, 23);
             this.buttonBorracha.TabIndex = 4;
             this.buttonBorracha.Text = "Borracha";
-            this.buttonBorracha.UseVisualStyleBackColor = true;
+            this.buttonBorracha.UseVisualStyleBackColor = false;
             this.buttonBorracha.Click += new System.EventHandler(this.buttonBorracha_Click);
+            this.buttonBorracha.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonBorracha_MouseDown);
             // 
             // buttonLimpar
             // 
