@@ -36,11 +36,14 @@
             this.buttonBorracha = new System.Windows.Forms.Button();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
+            this.panelPintura = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.buttonSalvar);
             this.groupBox1.Controls.Add(this.buttonLimpar);
             this.groupBox1.Controls.Add(this.buttonBorracha);
@@ -66,6 +69,7 @@
             this.buttonCorDaCaneta.Size = new System.Drawing.Size(75, 23);
             this.buttonCorDaCaneta.TabIndex = 0;
             this.buttonCorDaCaneta.UseVisualStyleBackColor = false;
+            this.buttonCorDaCaneta.Click += new System.EventHandler(this.buttonCorDaCaneta_Click);
             // 
             // CorDaCaneta
             // 
@@ -127,12 +131,24 @@
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
             // 
+            // panelPintura
+            // 
+            this.panelPintura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPintura.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelPintura.Location = new System.Drawing.Point(12, 106);
+            this.panelPintura.Name = "panelPintura";
+            this.panelPintura.Size = new System.Drawing.Size(776, 340);
+            this.panelPintura.TabIndex = 1;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelPintura);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormPrincipal";
             this.Text = "Simple Paint";
@@ -153,6 +169,7 @@
         private System.Windows.Forms.Button buttonBorracha;
         private System.Windows.Forms.Button buttonLimpar;
         private System.Windows.Forms.Button buttonSalvar;
+        private System.Windows.Forms.Panel panelPintura;
     }
 }
 
