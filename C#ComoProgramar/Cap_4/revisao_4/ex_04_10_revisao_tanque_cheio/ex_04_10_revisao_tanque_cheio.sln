@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_04_10_revisao_tanque_cheio", "ex_04_10_revisao_tanque_cheio\ex_04_10_revisao_tanque_cheio.csproj", "{A9D444B1-2A35-48E4-BD18-327E191AC316}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9D444B1-2A35-48E4-BD18-327E191AC316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D444B1-2A35-48E4-BD18-327E191AC316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D444B1-2A35-48E4-BD18-327E191AC316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D444B1-2A35-48E4-BD18-327E191AC316}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {479D2DC3-0238-49E2-93D5-B154CF4A9C4A}
+	EndGlobalSection
+EndGlobal
