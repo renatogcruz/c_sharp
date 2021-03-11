@@ -22,10 +22,10 @@ namespace _5_8_Interest
             for (int year = 1; year <= 10; year++)
             {
                 amount = principal *
-                    (decimal)Math.Pow(1.0 + rate, year);
+                    (decimal)Math.Pow(1.0 + rate, year); // Pow(x, y) == calcula valor de x elevado à y
 
                 output += year + "\t" +
-                    String.Format("{0:C}", amount) + "\n";
+                    String.Format("{0:C}", amount) + "\n"; // C ou c formata a string como moeda
             }
 
             Console.WriteLine(output, "Compound Interest");
