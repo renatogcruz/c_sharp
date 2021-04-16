@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "programa_QUDRADO_SOMA", "programa_QUDRADO_SOMA\programa_QUDRADO_SOMA.csproj", "{0E9208BB-B403-49C4-8956-092BCC1D355D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E9208BB-B403-49C4-8956-092BCC1D355D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9208BB-B403-49C4-8956-092BCC1D355D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9208BB-B403-49C4-8956-092BCC1D355D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E9208BB-B403-49C4-8956-092BCC1D355D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31680E1F-F364-46B7-A9F0-AFD5C5844A3A}
+	EndGlobalSection
+EndGlobal
