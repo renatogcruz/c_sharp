@@ -6,37 +6,49 @@ using System.Threading.Tasks;
 
 namespace exemplo_3
 {
+    // Leia 3 valores e diga se é um triângulo (qual tipo) ou não
     // Exemplo 3 - página 103
 
     class Program
     {
         static void Main(string[] args)
         {
-            string numberA, numberB, numberC;
+            string ladoA, ladoB, ladoC;
             double a, b, c;
 
             // Entrada
-            Console.Write("Entre com lado A: ");
-            numberA = Console.ReadLine();
+            Console.Write("Entre com o lado A: ");
+            ladoA = Console.ReadLine();
 
-            Console.Write("Entre com lado B: ");
-            numberB = Console.ReadLine();
+            Console.Write("Entre com o lado B: ");
+            ladoB = Console.ReadLine();
 
-            Console.Write("Entre com lado C: ");
-            numberC = Console.ReadLine();
+            Console.Write("Entre com o lado C: ");
+            ladoC = Console.ReadLine();
 
-            // convertendo string para double
-            a = Convert.ToDouble(numberA);
-            b = Convert.ToDouble(numberB);
-            c = Convert.ToDouble(numberC);
+            // converntendo string para double
+            a = Convert.ToDouble(ladoA);
+            b = Convert.ToDouble(ladoB);
+            c = Convert.ToDouble(ladoC);
 
             // Processamento
-            if (a < b) & (a > c);
+            if (a < b + c && b < a + c && c < a + b)
             {
-                if (b == a) & (b > c);
-                    Console.WriteLine("Texto");
-            }
-                    
+                if (a == b && b == c)
+                    Console.WriteLine("Triângulo Equilátero");
+                else
+                {
+                    if (a == b || a == c || c == b)
+                        Console.WriteLine("Triângulo Isósceles");
+                    else
+                        Console.WriteLine("Triângulo Escaleno");
+                }
+            }                
+            else
+                Console.WriteLine("Não é um triângulo");                 
+                                               
+            
+
 
         }
     }
