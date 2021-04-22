@@ -19,6 +19,8 @@ Estudando c#
 
 ## Algoritmos
 
+[Estudando Algoritmos](https://github.com/renatogcruz/c_sharp/blob/master/algoritmos_manzano_oliveira/README.md)
+
 [Algoritmos e estruturas de dados implementados em C #](https://github.com/TheAlgorithms/C-Sharp)
 
 ## Livro de notas C# para profissionais
