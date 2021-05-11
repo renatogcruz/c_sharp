@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "programa_CELSIUS", "programa_CELSIUS\programa_CELSIUS.csproj", "{362FA77A-717A-4CF4-9FCB-CB5E29E7D1BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{362FA77A-717A-4CF4-9FCB-CB5E29E7D1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{362FA77A-717A-4CF4-9FCB-CB5E29E7D1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{362FA77A-717A-4CF4-9FCB-CB5E29E7D1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{362FA77A-717A-4CF4-9FCB-CB5E29E7D1BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B868241B-BDD3-4CC8-8BBB-F53433D905A3}
+	EndGlobalSection
+EndGlobal
