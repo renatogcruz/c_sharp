@@ -1,0 +1,25 @@
+Exame 70-483: Programming in C#
+
+https://docs.microsoft.com/pt-br/learn/certifications/exams/70-483
+
+Os candidatos a este exame devem possuir pelo menos um ano de experiência em programação de lógica de aplicativo/negócio essencial para diversos tipos de aplicativos e plataformas de hardware/software usando C#.
+
+Os candidatos também devem ter uma compreensão ampla do seguinte:
+
+Gerenciamento de fluxo e eventos de programa
+Programação assíncrona e threading
+Validação de dados e trabalhar com coleções de dados, incluindo LINQ
+Lidar com erros e exceções
+Trabalhar com matrizes e coleções
+Trabalhar com variáveis, operadores e expressões
+Trabalhar com classes e métodos
+Declarações de decisão e iteração
+
+Como o material de estudo é extenso, dividimos os tópicos abordados em diversos cursos. O primeiro deles é dedicado ao tópico Criar Tipos:
+
+Criar e usar tipos (25–30%)
+Criar tipos
+Criar tipos de valor, incluindo estruturas e enum; criar tipos de referência, tipos genéricos, construtores, variáveis estáticas, métodos, classes, métodos de extensão, parâmetros opcionais e nomeados e propriedades indexadas; criar métodos sobrecarregados e substituídos
+Além disso, você poderá perceber que os exercícios são formulados num formato um pouco diferente do padrão da Alura, e mais adequado ao tipo de questões encontradas do exame de certificação.
+
+Boa sorte e bons estudos!
