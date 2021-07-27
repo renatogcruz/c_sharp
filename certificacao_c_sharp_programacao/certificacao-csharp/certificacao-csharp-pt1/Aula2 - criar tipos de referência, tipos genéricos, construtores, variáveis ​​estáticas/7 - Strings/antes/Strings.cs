@@ -12,6 +12,10 @@ namespace certificacao_csharp_roteiro.antes
         {
             string a = "bom dia";
             string b = "b";
+
+            // Adicionar ao conteúdo de "b"
+            b = b + "om dia";
+            Console.WriteLine($"a == b: {a == b}");
         }
     }
 }
